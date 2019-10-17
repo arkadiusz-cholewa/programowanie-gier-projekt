@@ -159,6 +159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 853e233ab0fe0994dbf3dab230a51da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Offset: 150
+  Speed: 15
+  MinMaxXPosition: {x: -7, y: 7}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
