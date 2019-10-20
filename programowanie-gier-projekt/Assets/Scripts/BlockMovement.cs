@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets
+namespace Assets.Scripts
 {
     public class BlockMovement : MonoBehaviour
     {
@@ -40,6 +40,7 @@ namespace Assets
             if (Input.GetMouseButtonDown(LeftMouseButton))
             {
                 print("CLICK");
+                ScoreManager.AddPoints(20);
                 Destroy(gameObject);
             }
         }
