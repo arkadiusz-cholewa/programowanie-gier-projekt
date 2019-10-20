@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Assets.Scripts
@@ -20,6 +21,11 @@ namespace Assets.Scripts
             StartingTime -= Time.deltaTime;
 
             _theText.text = "" + Mathf.Round(StartingTime);
+
+            if (StartingTime < 0)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
         }
     }
 }
