@@ -5,7 +5,11 @@ namespace Assets.Scripts
     public class HorizontalRightMovement : MonoBehaviour
     {
         public GameObject targetPrefab;
-        private readonly float _offsetMin =1f;
+        public Sprite duck_kill;
+        Animator animator;
+
+        private bool _isDead = false;
+        private readonly float _offsetMin = 1f;
         private readonly float _offsetMax = 3f;
         private readonly float _minVelocity = 4f;
         private readonly float _maxVelocity = 8f;
@@ -21,9 +25,16 @@ namespace Assets.Scripts
 
         void Update()
         {
-            if (transform.position.x > Constants.MaxX)
+            if (!_isDead && transform.position.x > Constants.MaxX)
             {
                 Setup();
+            }
+
+            if (_isDead && transform.position.y < Constants.MinY)
+            {
+                var obj = (GameObject)Instantiate(targetPrefab, new Vector2(Constants.MinX - Random.Range(_offsetMin, _offsetMax), Helpers.GetRandomYPosition()), Quaternion.identity);
+                obj.GetComponent<Rigidbody2D>().velocity = new Vector2(-Random.Range(_minVelocity, _maxVelocity), 0);
+                Destroy(gameObject);
             }
         }
 
@@ -31,15 +42,13 @@ namespace Assets.Scripts
         {
             if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
-                print("CLICK");
-
-
-                var obj = (GameObject)Instantiate(targetPrefab, new Vector2(Constants.MinX - Random.Range(_offsetMin, _offsetMax), Helpers.GetRandomYPosition()), Quaternion.identity);
-                obj.GetComponent<Rigidbody2D>().velocity = new Vector2(-Random.Range(_minVelocity, _maxVelocity), 0);
-
-                ScoreManager.AddPoints(20);
-                Destroy(gameObject);
-
+                animator = GetComponent<Animator>();
+                animator.enabled = false;
+                var sr = gameObject.GetComponent<SpriteRenderer>();
+                sr.sprite = duck_kill;
+                _isDead = true;
+                GetComponent<Rigidbody2D>().gravityScale = 2f;
+                ScoreManager.AddPoints(10);
             }
         }
 
@@ -47,6 +56,9 @@ namespace Assets.Scripts
         {
             transform.position = new Vector2(Constants.MinX - Random.Range(_offsetMin, _offsetMax), Helpers.GetRandomYPosition());
             GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(_minVelocity, _maxVelocity), 0);
+            animator = GetComponent<Animator>();
+            animator.enabled = true;
+            _isDead = false;
         }
     }
 }
