@@ -4,15 +4,18 @@ namespace Assets.Scripts
 {
     public class HorizontalRightMovement : MonoBehaviour
     {
-        // Start is called before the first frame update
         public GameObject targetPrefab;
+        private readonly float _offsetMin =1f;
+        private readonly float _offsetMax = 3f;
+        private readonly float _minVelocity = 4f;
+        private readonly float _maxVelocity = 8f;
 
         void Start()
         {
             GetComponent<Rigidbody2D>().gravityScale = 0f;
             GetComponent<Collider2D>().enabled = true;
-            transform.position = new Vector2(-Constants.MaxX - Random.Range(1f, 3f), Helpers.GetRandomYPosition());
-            GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(3f, 6f), 0);
+
+            Setup();
         }
 
 
@@ -20,8 +23,7 @@ namespace Assets.Scripts
         {
             if (transform.position.x > Constants.MaxX)
             {
-                transform.position = new Vector2(Constants.MaxX + Random.Range(1f, 3f), Helpers.GetRandomYPosition());
-                GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(3f, 6f), 0);
+                Setup();
             }
         }
 
@@ -32,13 +34,19 @@ namespace Assets.Scripts
                 print("CLICK");
 
 
-                var obj = (GameObject)Instantiate(targetPrefab, new Vector2(Constants.MaxX + Random.Range(1f, 3f), Helpers.GetRandomYPosition()), Quaternion.identity);
-                obj.GetComponent<Rigidbody2D>().velocity = new Vector2(-Random.Range(3f, 6f), 0);
+                var obj = (GameObject)Instantiate(targetPrefab, new Vector2(Constants.MinX - Random.Range(_offsetMin, _offsetMax), Helpers.GetRandomYPosition()), Quaternion.identity);
+                obj.GetComponent<Rigidbody2D>().velocity = new Vector2(-Random.Range(_minVelocity, _maxVelocity), 0);
 
                 ScoreManager.AddPoints(20);
                 Destroy(gameObject);
 
             }
+        }
+
+        private void Setup()
+        {
+            transform.position = new Vector2(Constants.MinX - Random.Range(_offsetMin, _offsetMax), Helpers.GetRandomYPosition());
+            GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(_minVelocity, _maxVelocity), 0);
         }
     }
 }
