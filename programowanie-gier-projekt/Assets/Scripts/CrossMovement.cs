@@ -2,37 +2,37 @@
 
 namespace Assets.Scripts
 {
-    public class HorizontalLeftMovement : MonoBehaviour
+    public class CrossMovement : MonoBehaviour
     {
         public GameObject targetPrefab;
         public Sprite duck_kill;
         Animator animator;
 
         private bool _isDead = false;
-        private readonly float _offsetMin = 3f;
-        private readonly float _offsetMax = 3f;
-        private readonly float _minVelocity = 4f;
-        private readonly float _maxVelocity = 8f;
+        private readonly float _minVelocity = 3f;
+        private readonly float _maxVelocity = 6f;
+        private float sign = 1;
 
         void Start()
         {
-            GetComponent<Collider2D>().enabled = true;
             GetComponent<Rigidbody2D>().gravityScale = 0f;
-
+            GetComponent<Collider2D>().enabled = true;
+            sign = (Random.value > 0.5f) ? -1 : 1;
             Setup();
         }
 
+
         void Update()
         {
-            if (!_isDead && transform.position.x < Constants.MinX)
+            if (!_isDead && transform.position.y > Constants.MaxY)
             {
                 Setup();
             }
 
             if (_isDead && transform.position.y < Constants.MinY)
             {
-                var obj = (GameObject)Instantiate(targetPrefab, new Vector2(Constants.MaxX + Random.Range(_offsetMin, _offsetMax), Helpers.GetRandomYPosition()), Quaternion.identity);
-                obj.GetComponent<Rigidbody2D>().velocity = new Vector2(-Random.Range(_minVelocity, _maxVelocity), 0);
+                var obj = (GameObject)Instantiate(targetPrefab, new Vector2(Helpers.GetRandomXPosition(), Constants.MinY - 3), Quaternion.identity);
+                obj.GetComponent<Rigidbody2D>().velocity = new Vector2(sign * Random.Range(_minVelocity, _maxVelocity), Random.Range(_minVelocity, _maxVelocity));
                 ReScale();
                 Destroy(gameObject);
             }
@@ -40,7 +40,7 @@ namespace Assets.Scripts
 
         private void OnMouseOver()
         {
-            if (!_isDead && Input.GetMouseButtonDown(Constants.LeftMouseButton))
+            if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 animator = GetComponent<Animator>();
                 animator.enabled = false;
@@ -54,18 +54,19 @@ namespace Assets.Scripts
 
         private void Setup()
         {
-            transform.position = new Vector2(Constants.MaxX + Random.Range(_offsetMin, _offsetMax), Helpers.GetRandomYPosition());
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-Random.Range(_minVelocity, _maxVelocity), 0);
+            transform.position = new Vector2(Helpers.GetRandomXPosition(), Constants.MinY - 3);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(sign * Random.Range(_minVelocity, _maxVelocity), Random.Range(_minVelocity, _maxVelocity));
             animator = GetComponent<Animator>();
             animator.enabled = true;
-            ReScale();
             _isDead = false;
+            ReScale();
+            sign = (Random.value > 0.5f) ? -1 : 1;
         }
 
         private void ReScale()
         {
             var scale = Random.Range(1f, 3f);
-            transform.localScale = new Vector3(scale, scale, 1);
+            transform.localScale = new Vector3((-sign) * scale, scale, 1);
         }
     }
 }
