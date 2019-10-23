@@ -9,6 +9,7 @@ namespace Assets.Scripts
         Animator animator;
 
         private bool _isDead = false;
+        private float _scale = 0f;
         private readonly float _offsetMin = 3f;
         private readonly float _offsetMax = 3f;
         private readonly float _minVelocity = 4f;
@@ -48,7 +49,7 @@ namespace Assets.Scripts
                 sr.sprite = duck_kill;
                 _isDead = true;
                 GetComponent<Rigidbody2D>().gravityScale = 2f;
-                ScoreManager.AddPoints(10);
+                ScoreManager.AddPoints(Mathf.FloorToInt( 30 - _scale * 10));
             }
         }
 
@@ -64,8 +65,8 @@ namespace Assets.Scripts
 
         private void ReScale()
         {
-            var scale = Random.Range(1f, 3f);
-            transform.localScale = new Vector3(scale, scale, 1);
+             _scale = Random.Range(1f, 3f);
+            transform.localScale = new Vector3(_scale, _scale, 1);
         }
     }
 }
