@@ -38,6 +38,7 @@ namespace Assets.Scripts
             transform.position = _cameraMove;
             var position = GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
             var target = GameObject.Find("Crosshair");
+            target.transform.localScale = new Vector3((int)WeaponManager.weaponCategory * 0.5f + 0.5f, (int)WeaponManager.weaponCategory * 0.5f + 0.5f, 0);
             target.transform.position = new Vector3(position.x, position.y, -9);
 
         }

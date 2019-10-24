@@ -7,7 +7,7 @@ public static class WeaponManager
     public static int numberOfBullets = 6;
     public static bool isReloading = false;
 
-    public enum WeaponCategory { Pistol, Shotgun, Rifle };
+    public enum WeaponCategory { Rifle, Pistol, Shotgun };
 
     public static WeaponCategory weaponCategory = WeaponCategory.Pistol;
 

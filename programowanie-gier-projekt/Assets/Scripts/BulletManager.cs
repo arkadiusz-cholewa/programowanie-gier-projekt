@@ -29,7 +29,7 @@ namespace Assets.Scripts
         void OnGUI()
         {
             _amountOfBullets = WeaponManager.numberOfBullets;
-            var bulletTypes = new Texture[] {pistolBullet, shotgunBullet, rifleBullet};
+            var bulletTypes = new Texture[] { rifleBullet, pistolBullet, shotgunBullet};
             for (var j = 1; j < _amountOfBullets+1; j++)
             {
                 GUI.DrawTexture(new Rect(Screen.width - (j*65), Screen.height - 120, 30, 30), bulletTypes[(int)WeaponManager.weaponCategory]);

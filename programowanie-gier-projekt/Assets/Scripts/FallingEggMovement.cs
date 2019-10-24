@@ -43,19 +43,36 @@ namespace Assets.Scripts
                 ReScale();
                 Destroy(gameObject);
             }
+
+            if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
+            {
+                var dist = Mathf.Abs(transform.position.z - Camera.main.transform.position.z);
+                var v3Pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
+                v3Pos = Camera.main.ScreenToWorldPoint(v3Pos);
+                var distanceBetween = Vector3.Distance(v3Pos, transform.position);
+                if (distanceBetween < (int)WeaponManager.weaponCategory * 1f + 1)
+                {
+                    Hit();
+                }
+            }
         }
 
         private void OnMouseOver()
         {
             if (!WeaponManager.isReloading &&  !_isDead  && Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
-              
-                var sr = gameObject.GetComponent<SpriteRenderer>();
-                sr.sprite = duck_kill;
-                _isDead = true;
-             
-                ScoreManager.AddPoints(Mathf.FloorToInt(-30));
+
+                Hit();
             }
+        }
+
+        private void Hit()
+        {
+            var sr = gameObject.GetComponent<SpriteRenderer>();
+            sr.sprite = duck_kill;
+            _isDead = true;
+
+            ScoreManager.AddPoints(Mathf.FloorToInt(-30));
         }
 
         private void Setup()
