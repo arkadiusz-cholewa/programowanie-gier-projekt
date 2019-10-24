@@ -16,6 +16,14 @@ namespace Assets.Scripts
            // StartCoroutine(targetWave());
         }
 
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
+            {
+                WeaponManager.Shot();
+            }
+        }
+
         private void spawnEnemy()
         {
             var newGameObject = Instantiate(targetPrefab) as GameObject;

@@ -41,7 +41,7 @@ namespace Assets.Scripts
 
         private void OnMouseOver()
         {
-            if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
+            if (!WeaponManager.isReloading &&  Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 ScoreManager.AddPoints(Mathf.FloorToInt(30 - _scale * 10));
             }

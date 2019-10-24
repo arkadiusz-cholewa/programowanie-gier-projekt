@@ -35,7 +35,7 @@ namespace Assets.Scripts
 
         private void OnMouseOver()
         {
-            if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
+            if (!WeaponManager.isReloading && Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 print("CLICK");
                 ScoreManager.AddPoints(20);

@@ -41,7 +41,7 @@ namespace Assets.Scripts
 
         private void OnMouseOver()
         {
-            if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
+            if (!WeaponManager.isReloading && !_isDead && Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 animator = GetComponent<Animator>();
                 animator.enabled = false;
