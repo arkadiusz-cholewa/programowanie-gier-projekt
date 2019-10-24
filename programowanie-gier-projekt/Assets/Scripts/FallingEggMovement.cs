@@ -73,7 +73,7 @@ namespace Assets.Scripts
 
         private void ReScale()
         {
-            _scale = Random.Range(4f, 7f);
+            _scale = Random.Range(1f, 3f);
             _gravityScale = Random.Range(0.1f, 0.5f);
             transform.localScale = new Vector3(-_scale, _scale, 1);
         }
