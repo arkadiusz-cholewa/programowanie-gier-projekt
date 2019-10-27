@@ -36,7 +36,7 @@ namespace Assets.Scripts
 
             }
 
-            if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
+         if (!WeaponManager.isReloading && Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 var dist = Mathf.Abs(transform.position.z - Camera.main.transform.position.z);
                 var v3Pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
