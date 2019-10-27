@@ -24,9 +24,12 @@ public class HighscoreTable : MonoBehaviour
         highscoreEntryList.Sort();
 
         highscoreEntryTransformList = new List<Transform>();
+        var max =0;
         foreach (var highscoreEntry in highscoreEntryList)
         {
             CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
+            max++;
+            if(max == 10) break;
         }
     }
 
