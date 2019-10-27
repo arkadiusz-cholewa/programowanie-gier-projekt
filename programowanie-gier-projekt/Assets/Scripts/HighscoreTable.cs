@@ -16,10 +16,19 @@ public class HighscoreTable : MonoBehaviour
         entryTemplate = entryContainer.Find("HighscoreEntryTemplate");
 
         entryTemplate.gameObject.SetActive(false);
-        AddHighscoreEntry(100000, "ANIA");
 
+     
         string jsonString = PlayerPrefs.GetString("highscoreTable");
+    
+      
+
         var highscores = JsonUtility.FromJson<Highscores>(jsonString);
+        if (highscores == null)
+        {
+            highscores = new Highscores();
+            highscores.highscoreEntryList = new List<HighscoreEntry>();
+        }
+
         highscoreEntryList = highscores.highscoreEntryList;
         highscoreEntryList.Sort();
 
@@ -66,12 +75,19 @@ public class HighscoreTable : MonoBehaviour
         transformList.Add(entryTransform);
     }
 
-    private void AddHighscoreEntry(int score, string name)
+    public static void AddHighscoreEntry(int score, string name)
     {
         var highscoreEntry = new HighscoreEntry() { score = score, name = name };
 
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         var highscores = JsonUtility.FromJson<Highscores>(jsonString);
+
+        if (highscores == null)
+        {
+            highscores = new Highscores();
+            highscores.highscoreEntryList = new List<HighscoreEntry>();
+        }
+
 
         highscores.highscoreEntryList.Add(highscoreEntry);
         string json = JsonUtility.ToJson(highscores);
