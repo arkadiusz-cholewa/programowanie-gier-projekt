@@ -23,7 +23,7 @@ namespace Assets.Scripts
 
             if (StartingTime < 0)
             {
-                SceneManager.LoadScene("GameOver");
+                SceneManager.LoadScene("GameOverScene");
             }
         }
     }
