@@ -1497,8 +1497,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPrefab: {fileID: 5097471426732270899, guid: 2edbbd6d7cc04dc49b9e3f72a1724c04,
     type: 3}
-  _offsetMin: 25
-  _offsetMax: 35
 --- !u!1001 &2017317517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1704,6 +1702,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 236165891172514949, guid: 1619b5003297c4a49a5083d028bbfbba,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 161.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 236165891172514949, guid: 1619b5003297c4a49a5083d028bbfbba,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 83.845
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1619b5003297c4a49a5083d028bbfbba, type: 3}
