@@ -437,7 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: 150
   Speed: 15
-  MinMaxXPosition: {x: -15, y: 15}
+  MinMaxXPosition: {x: -20, y: 20}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0

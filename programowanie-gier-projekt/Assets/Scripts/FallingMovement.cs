@@ -13,6 +13,7 @@ namespace Assets.Scripts
         private readonly float _offsetMax = 3f;
         private readonly float _minVelocity = 4f;
         private readonly float _maxVelocity = 8f;
+        private float mult = RoundManager.round / 10f;
 
         void Start()
         {
@@ -32,7 +33,7 @@ namespace Assets.Scripts
             {
                 var obj = (GameObject)Instantiate(targetPrefab, new Vector2(Helpers.GetRandomXPosition(), Constants.MaxY + Random.Range(_offsetMin, _offsetMax)), Quaternion.identity);
                 obj.GetComponent<Rigidbody2D>().gravityScale = _gravityScale;
-                GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0+mult, 0+mult);
                 ReScale();
                
             }
@@ -68,7 +69,7 @@ namespace Assets.Scripts
             ReScale();
             transform.position = new Vector2(Helpers.GetRandomXPosition(),Constants.MaxY + Random.Range(_offsetMin, _offsetMax));
             GetComponent<Rigidbody2D>().gravityScale = _gravityScale;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0+mult, 0+mult);
              
         }
 
@@ -76,6 +77,7 @@ namespace Assets.Scripts
         {
             _scale = Random.Range(2f, 3f);
             _gravityScale = Random.Range(0.1f, 0.15f);
+             _scale -= RoundManager.round / 30f; 
             transform.localScale = new Vector3(_scale, _scale, 1);
         }
     }

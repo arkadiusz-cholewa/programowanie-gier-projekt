@@ -15,6 +15,7 @@ namespace Assets.Scripts
         private readonly float _offsetMax = 3f;
         private readonly float _minVelocity = 4f;
         private readonly float _maxVelocity = 8f;
+        private float mult = RoundManager.round / 10f;
 
         void Start()
         {
@@ -34,7 +35,7 @@ namespace Assets.Scripts
             if (_isDead && transform.position.y < Constants.MinY)
             {
                 var obj = (GameObject)Instantiate(targetPrefab, new Vector2(Constants.MaxX + Random.Range(_offsetMin, _offsetMax), Helpers.GetRandomYPosition()), Quaternion.identity);
-                obj.GetComponent<Rigidbody2D>().velocity = new Vector2(-Random.Range(_minVelocity, _maxVelocity), 0);
+                obj.GetComponent<Rigidbody2D>().velocity = new Vector2(-Random.Range(_minVelocity+mult, _maxVelocity+mult), 0);
                 ReScale();
                 Destroy(gameObject);
             }
@@ -78,7 +79,7 @@ namespace Assets.Scripts
         private void Setup()
         {
             transform.position = new Vector2(Constants.MaxX + Random.Range(_offsetMin, _offsetMax), Helpers.GetRandomYPosition());
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-Random.Range(_minVelocity, _maxVelocity), 0);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-Random.Range(_minVelocity+mult, _maxVelocity+mult), 0);
             animator = GetComponent<Animator>();
             animator.enabled = true;
             ReScale();
@@ -88,6 +89,7 @@ namespace Assets.Scripts
         private void ReScale()
         {
              _scale = Random.Range(1f, 3f);
+              _scale -= RoundManager.round / 30f; 
             transform.localScale = new Vector3(_scale, _scale, 1);
         }
     }

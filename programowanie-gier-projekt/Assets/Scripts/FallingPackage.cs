@@ -12,7 +12,7 @@ namespace Assets.Scripts
         public readonly float _offsetMax = 3f;
         private readonly float _minVelocity = 4f;
         private readonly float _maxVelocity = 8f;
-
+        private float mult = RoundManager.round / 10f;
         void Start()
         {
             GetComponent<Collider2D>().enabled = true;
@@ -31,12 +31,12 @@ namespace Assets.Scripts
             {
                 var obj = (GameObject)Instantiate(targetPrefab, new Vector2(Helpers.GetRandomXPosition(), Constants.MaxY + Random.Range(_offsetMin, _offsetMax)), Quaternion.identity);
                 obj.GetComponent<Rigidbody2D>().gravityScale = _gravityScale;
-                GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0 + mult, 0 + mult);
                 ReScale();
 
             }
 
-         if (!WeaponManager.isReloading && Input.GetMouseButtonDown(Constants.LeftMouseButton))
+            if (!WeaponManager.isReloading && Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 var dist = Mathf.Abs(transform.position.z - Camera.main.transform.position.z);
                 var v3Pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
@@ -67,13 +67,14 @@ namespace Assets.Scripts
             ReScale();
             transform.position = new Vector2(Helpers.GetRandomXPosition(), Constants.MaxY + Random.Range(_offsetMin, _offsetMax));
             GetComponent<Rigidbody2D>().gravityScale = _gravityScale;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0 + mult, 0 + mult);
 
         }
 
         private void ReScale()
         {
             _scale = Random.Range(2f, 3f);
+            _scale -= RoundManager.round / 30f;
             _gravityScale = Random.Range(0.1f, 0.15f);
             transform.localScale = new Vector3(_scale, _scale, 1);
         }
