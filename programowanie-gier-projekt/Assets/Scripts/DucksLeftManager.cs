@@ -18,10 +18,10 @@ namespace Assets.Scripts
         {
             _theText.text = "" + ducksLeft;
 
-            if (ducksLeft == 0)
+            if (ducksLeft < 0)
             {
                 RoundManager.NextRound();
-               // TimeManager.RestartTimer();
+                TimeManager.RestartTimer();
                 ducksLeft = 20;
             }
         }

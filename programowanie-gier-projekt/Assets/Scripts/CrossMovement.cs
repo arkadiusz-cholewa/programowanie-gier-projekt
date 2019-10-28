@@ -7,6 +7,7 @@ namespace Assets.Scripts
         public GameObject targetPrefab;
         public Sprite duck_kill;
         Animator animator;
+        public int value = 30;
 
         private bool _isDead = false;
         private float _scale = 0f;
@@ -68,7 +69,7 @@ namespace Assets.Scripts
             sr.sprite = duck_kill;
             _isDead = true;
             GetComponent<Rigidbody2D>().gravityScale = 2f;
-            ScoreManager.AddPoints(Mathf.FloorToInt(30 - _scale * 10));
+            ScoreManager.AddPoints(Mathf.FloorToInt(value - _scale * 10));
             DucksLeftManager.DecreaseDucksLeftCounter();
         }
 

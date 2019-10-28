@@ -8,16 +8,27 @@ namespace Assets.Scripts
     public class SquirellHandleClick : MonoBehaviour
     {
         // Start is called before the first frame update
+
+        public static bool isSpawned = false;
         void Start()
         {
-
+            if (isSpawned)
+            {
+                Destroy(gameObject);
+            }
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
+        }
+
+        private void OnMouseOver()
+        {
+
+            if (!isSpawned && Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
+                isSpawned = false;
                 SceneManager.LoadScene("MagicWorldScene");
                 Destroy(gameObject);
             }

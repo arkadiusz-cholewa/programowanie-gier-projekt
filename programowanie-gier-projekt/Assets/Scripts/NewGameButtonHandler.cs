@@ -20,6 +20,7 @@ namespace Assets.Scripts
         void TaskOnClick()
         {
             ScoreManager.Score = 0;
+            SquirellHandleClick.isSpawned = true;
             SceneManager.LoadScene("NewGameScene");
         }
     }

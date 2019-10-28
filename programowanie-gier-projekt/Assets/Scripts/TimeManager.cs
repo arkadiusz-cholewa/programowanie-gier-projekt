@@ -6,14 +6,16 @@ namespace Assets.Scripts
 {
     public class TimeManager : MonoBehaviour
     {
-        public float StartingTime;
+        public static float StartingTime;
+        public static float MoreTimeInSeconds = 30;
         public string ShowSceneNameAfterTimeEnd = "GameOverScene";
- 
+
         private Text _theText;
 
         void Start()
         {
             _theText = GetComponent<Text>();
+            RestartTimer();
         }
 
         void Update()
@@ -28,8 +30,9 @@ namespace Assets.Scripts
             }
         }
 
-        public static void  RestartTimer() {
-          //  StartingTime = 60;
+        public static void RestartTimer()
+        {
+            StartingTime += MoreTimeInSeconds;
         }
     }
 }

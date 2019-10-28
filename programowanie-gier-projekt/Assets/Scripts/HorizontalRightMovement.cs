@@ -10,6 +10,7 @@ namespace Assets.Scripts
 
         private bool _isDead = false;
         private float _scale = 0f;
+         public int value = 30;
         private readonly float _offsetMin = 1f;
         private readonly float _offsetMax = 3f;
         private readonly float _minVelocity = 4f;
@@ -70,7 +71,7 @@ namespace Assets.Scripts
             sr.sprite = duck_kill;
             _isDead = true;
             GetComponent<Rigidbody2D>().gravityScale = 2f;
-            ScoreManager.AddPoints(Mathf.FloorToInt(30 - _scale * 10));
+            ScoreManager.AddPoints(Mathf.FloorToInt(value - _scale * 10));
              DucksLeftManager.DecreaseDucksLeftCounter();
         }
 
