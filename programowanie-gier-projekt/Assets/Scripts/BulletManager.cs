@@ -32,7 +32,7 @@ namespace Assets.Scripts
             var bulletTypes = new Texture[] { rifleBullet, pistolBullet, shotgunBullet};
             for (var j = 1; j < _amountOfBullets+1; j++)
             {
-                GUI.DrawTexture(new Rect(Screen.width - (j*65), Screen.height - 120, 30, 30), bulletTypes[(int)WeaponManager.weaponCategory]);
+                GUI.DrawTexture(new Rect(Screen.width - (j*30), Screen.height - 40, 30, 30), bulletTypes[(int)WeaponManager.weaponCategory]);
             }
 
             if (_amountOfBullets == 0)

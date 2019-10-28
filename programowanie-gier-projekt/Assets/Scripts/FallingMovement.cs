@@ -6,7 +6,7 @@ namespace Assets.Scripts
     public class FallingMovement : MonoBehaviour
     {
         public GameObject targetPrefab;
-  
+
         private float _scale = 0f;
         private float _gravityScale = 0f;
         private readonly float _offsetMin = 3f;
@@ -24,18 +24,18 @@ namespace Assets.Scripts
 
         void Update()
         {
-            if ( transform.position.y < Constants.MinY)
+            if (transform.position.y < Constants.MinY)
             {
                 Setup();
             }
 
-            if ( transform.position.y < Constants.MinY)
+            if (transform.position.y < Constants.MinY)
             {
                 var obj = (GameObject)Instantiate(targetPrefab, new Vector2(Helpers.GetRandomXPosition(), Constants.MaxY + Random.Range(_offsetMin, _offsetMax)), Quaternion.identity);
                 obj.GetComponent<Rigidbody2D>().gravityScale = _gravityScale;
-                GetComponent<Rigidbody2D>().velocity = new Vector2(0+mult, 0+mult);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0 + mult, 0 + mult);
                 ReScale();
-               
+
             }
 
             if (!WeaponManager.isReloading && Input.GetMouseButtonDown(Constants.LeftMouseButton))
@@ -44,7 +44,7 @@ namespace Assets.Scripts
                 var v3Pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
                 v3Pos = Camera.main.ScreenToWorldPoint(v3Pos);
                 var distanceBetween = Vector3.Distance(v3Pos, transform.position);
-                if (distanceBetween < (int)WeaponManager.weaponCategory * 1f + 1)
+                if (distanceBetween < 0.25f + (int)WeaponManager.weaponCategory * 0.15f)
                 {
                     Hit();
                 }
@@ -53,7 +53,7 @@ namespace Assets.Scripts
 
         private void OnMouseOver()
         {
-            if (!WeaponManager.isReloading &&  Input.GetMouseButtonDown(Constants.LeftMouseButton))
+            if (!WeaponManager.isReloading && Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 Hit();
             }
@@ -67,17 +67,17 @@ namespace Assets.Scripts
         private void Setup()
         {
             ReScale();
-            transform.position = new Vector2(Helpers.GetRandomXPosition(),Constants.MaxY + Random.Range(_offsetMin, _offsetMax));
+            transform.position = new Vector2(Helpers.GetRandomXPosition(), Constants.MaxY + Random.Range(_offsetMin, _offsetMax));
             GetComponent<Rigidbody2D>().gravityScale = _gravityScale;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0+mult, 0+mult);
-             
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0 + mult, 0 + mult);
+
         }
 
         private void ReScale()
         {
             _scale = Random.Range(2f, 3f);
             _gravityScale = Random.Range(0.1f, 0.15f);
-             _scale -= RoundManager.round / 30f; 
+            _scale -= RoundManager.round / 30f;
             transform.localScale = new Vector3(_scale, _scale, 1);
         }
     }

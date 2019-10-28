@@ -50,7 +50,7 @@ namespace Assets.Scripts
                 var v3Pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
                 v3Pos = Camera.main.ScreenToWorldPoint(v3Pos);
                 var distanceBetween = Vector3.Distance(v3Pos, transform.position);
-                if (distanceBetween < (int)WeaponManager.weaponCategory * 1f + 1)
+                if (distanceBetween <  0.25f + (int)WeaponManager.weaponCategory * 0.15f)
                 {
                     Hit();
                 }
