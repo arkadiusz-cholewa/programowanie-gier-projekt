@@ -11,8 +11,46 @@ namespace Assets.Scripts
         public GameObject targetPrefab;
         public float respawnTime = 1f;
 
+
+        SpriteRenderer sr;
+        GameObject back1;
+        GameObject back2;
+        GameObject back3;
+        private void Start()
+        {
+            back1 = GameObject.Find("back1");
+            back2 = GameObject.Find("back2");
+            back3 = GameObject.Find("back3");
+
+
+            back1.SetActive(true);
+            back2.SetActive(false);
+            back3.SetActive(false);
+        }
+
         private void Update()
         {
+            if (RoundManager.round - 1 % 3 == 0)
+            {
+                back1.SetActive(true);
+                back2.SetActive(false);
+                back3.SetActive(false);
+            }
+
+            if (RoundManager.round - 1 % 3 == 1)
+            {
+                back1.SetActive(false);
+                back2.SetActive(true);
+                back3.SetActive(false);
+            }
+
+            if (RoundManager.round - 1 % 3 == 2)
+            {
+                back1.SetActive(false);
+                back2.SetActive(false);
+                back3.SetActive(true);
+            }
+
             if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 WeaponManager.Shot();
