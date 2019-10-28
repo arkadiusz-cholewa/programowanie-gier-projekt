@@ -13,7 +13,6 @@ namespace Assets.Scripts
         }
         void Update()
         {
-
             _theText.text = "" + ScoreManager.Score;
         }
     }

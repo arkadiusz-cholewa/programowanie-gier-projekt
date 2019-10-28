@@ -11,15 +11,6 @@ namespace Assets.Scripts
         private const float XVelocityMax = 3;
         private const float XVelocityMin = -3;
 
-       
-
-        // Start is called before the first frame update
-        private void Start()
-        {
-
-        }
-
-        // Update is called once per frame
         private void Update()
         {
             if (transform.position.y < MinY)
@@ -37,7 +28,6 @@ namespace Assets.Scripts
         {
             if (!WeaponManager.isReloading && Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
-                print("CLICK");
                 ScoreManager.AddPoints(20);
                 Destroy(gameObject);
             }

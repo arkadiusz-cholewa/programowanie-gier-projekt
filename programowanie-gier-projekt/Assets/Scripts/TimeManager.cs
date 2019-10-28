@@ -16,7 +16,6 @@ namespace Assets.Scripts
         void Start()
         {
             _theText = GetComponent<Text>();
-            // RestartTimer();
         }
 
         void Update()

@@ -24,5 +24,4 @@ namespace Assets.Scripts
             SceneManager.LoadScene("NewGameScene");
         }
     }
-
 }

@@ -4,19 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
-public class ScoreboardButtonHandler : MonoBehaviour
+namespace Assets.Scripts
 {
-    public Button yourButton;
-
-    void Start()
+    public class ScoreboardButtonHandler : MonoBehaviour
     {
-        Button btn = yourButton.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
-    }
+        public Button yourButton;
 
-    void TaskOnClick()
-    {
-        SceneManager.LoadScene("ScoreboardScene");
+        void Start()
+        {
+            Button btn = yourButton.GetComponent<Button>();
+            btn.onClick.AddListener(TaskOnClick);
+        }
+
+        void TaskOnClick()
+        {
+            SceneManager.LoadScene("ScoreboardScene");
+        }
     }
 }

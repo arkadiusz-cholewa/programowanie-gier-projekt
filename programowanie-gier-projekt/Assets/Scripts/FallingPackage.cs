@@ -5,7 +5,6 @@ namespace Assets.Scripts
     public class FallingPackage : MonoBehaviour
     {
         public GameObject targetPrefab;
-
         private float _scale = 0f;
         private float _gravityScale = 0f;
         public readonly float _offsetMin = 3f;
@@ -66,7 +65,6 @@ namespace Assets.Scripts
             transform.position = new Vector2(Helpers.GetRandomXPosition(), Constants.MaxY + Random.Range(_offsetMin, _offsetMax));
             GetComponent<Rigidbody2D>().gravityScale = _gravityScale;
             GetComponent<Rigidbody2D>().velocity = new Vector2(0 + mult, 0 + mult);
-
         }
 
         private void ReScale()

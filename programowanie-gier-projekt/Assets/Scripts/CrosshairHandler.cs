@@ -2,29 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrosshairHandler : MonoBehaviour
+namespace Assets.Scripts
 {
-    public Sprite reload;
-    public Sprite crosshair;
-    // Start is called before the first frame update
-    void Start()
+    public class CrosshairHandler : MonoBehaviour
     {
-        var sr = gameObject.GetComponent<SpriteRenderer>();
-        sr.sprite = crosshair;
-    }
+        public Sprite reload;
+        public Sprite crosshair;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (WeaponManager.isReloading)
-        {
-            var sr = gameObject.GetComponent<SpriteRenderer>();
-            sr.sprite = reload;
-        }
-        else
+        void Start()
         {
             var sr = gameObject.GetComponent<SpriteRenderer>();
             sr.sprite = crosshair;
+        }
+
+        void Update()
+        {
+            if (WeaponManager.isReloading)
+            {
+                var sr = gameObject.GetComponent<SpriteRenderer>();
+                sr.sprite = reload;
+            }
+            else
+            {
+                var sr = gameObject.GetComponent<SpriteRenderer>();
+                sr.sprite = crosshair;
+            }
         }
     }
 }

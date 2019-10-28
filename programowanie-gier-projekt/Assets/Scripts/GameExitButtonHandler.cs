@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameExitButtonHandler : MonoBehaviour
+namespace Assets.Scripts
 {
-    public Button yourButton;
-
-    void Start()
+    public class GameExitButtonHandler : MonoBehaviour
     {
-        Button btn = yourButton.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
-    }
+        public Button yourButton;
 
-    void TaskOnClick()
-    {
-       Application.Quit();
+        void Start()
+        {
+            Button btn = yourButton.GetComponent<Button>();
+            btn.onClick.AddListener(TaskOnClick);
+        }
+
+        void TaskOnClick()
+        {
+            Application.Quit();
+        }
     }
 }

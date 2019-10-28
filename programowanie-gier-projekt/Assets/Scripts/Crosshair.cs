@@ -9,8 +9,6 @@ namespace Assets.Scripts
         public Vector2 MinMaxXPosition;
         private float _screenWidth;
         private Vector3 _cameraMove;
-
-        // Start is called before the first frame update
         private void Start()
         {
             _screenWidth = Screen.width;
@@ -20,7 +18,6 @@ namespace Assets.Scripts
             _cameraMove.z = transform.position.z;
         }
 
-        // Update is called once per frame
         private void Update()
         {
             if ((Input.mousePosition.x > _screenWidth - Offset) && transform.position.x < MinMaxXPosition.y)
@@ -40,7 +37,6 @@ namespace Assets.Scripts
             var target = GameObject.Find("Crosshair");
             target.transform.localScale = new Vector3((int)WeaponManager.weaponCategory * 0.5f + 0.5f, (int)WeaponManager.weaponCategory * 0.5f + 0.5f, 0);
             target.transform.position = new Vector3(position.x, position.y, -9);
-
         }
 
         private float MoveSpeed()

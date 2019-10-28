@@ -7,8 +7,6 @@ namespace Assets.Scripts
 {
     public class SquirellHandleClick : MonoBehaviour
     {
-        // Start is called before the first frame update
-
         public static bool isSpawned = false;
         void Start()
         {
@@ -16,11 +14,6 @@ namespace Assets.Scripts
             {
                 Destroy(gameObject);
             }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
         }
 
         private void OnMouseOver()
@@ -35,5 +28,4 @@ namespace Assets.Scripts
             }
         }
     }
-
 }

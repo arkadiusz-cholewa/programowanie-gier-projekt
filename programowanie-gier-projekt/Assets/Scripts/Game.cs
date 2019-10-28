@@ -11,13 +11,6 @@ namespace Assets.Scripts
         public GameObject targetPrefab;
         public float respawnTime = 1f;
 
-        // Start is called before the first frame update
-        private void Start()
-        {
-            // StartCoroutine(targetWave());
-            
-        }
-
         private void Update()
         {
             if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
@@ -46,7 +39,5 @@ namespace Assets.Scripts
                 spawnEnemy();
             }
         }
-
-
     }
 }

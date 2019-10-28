@@ -75,7 +75,6 @@ namespace Assets.Scripts
             DucksLeftManager.DecreaseDucksLeftCounter();
         }
 
-
         private void Setup()
         {
             transform.position = new Vector2(Constants.MaxX + Random.Range(_offsetMin, _offsetMax), Helpers.GetRandomYPosition());

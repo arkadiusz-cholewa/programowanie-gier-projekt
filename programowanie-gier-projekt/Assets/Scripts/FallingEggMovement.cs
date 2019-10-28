@@ -10,7 +10,6 @@ namespace Assets.Scripts
         public Sprite duck_kill;
         public Sprite egg;
       
-
         private bool _isDead = false;
         private float _scale = 0f;
         private float _gravityScale = 0f;
@@ -24,7 +23,6 @@ namespace Assets.Scripts
 
             Setup();
         }
-
 
         void Update()
         {
@@ -69,7 +67,6 @@ namespace Assets.Scripts
             var sr = gameObject.GetComponent<SpriteRenderer>();
             sr.sprite = duck_kill;
             _isDead = true;
-
             ScoreManager.AddPoints(Mathf.FloorToInt(-30));
         }
 

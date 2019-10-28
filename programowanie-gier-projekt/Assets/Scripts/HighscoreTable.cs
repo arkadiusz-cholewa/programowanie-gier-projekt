@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System; //This allows the IComparable Interface
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,10 +17,7 @@ public class HighscoreTable : MonoBehaviour
 
         entryTemplate.gameObject.SetActive(false);
 
-     
         string jsonString = PlayerPrefs.GetString("highscoreTable");
-    
-      
 
         var highscores = JsonUtility.FromJson<Highscores>(jsonString);
         if (highscores == null)
@@ -33,12 +30,12 @@ public class HighscoreTable : MonoBehaviour
         highscoreEntryList.Sort();
 
         highscoreEntryTransformList = new List<Transform>();
-        var max =0;
+        var max = 0;
         foreach (var highscoreEntry in highscoreEntryList)
         {
             CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
             max++;
-            if(max == 10) break;
+            if (max == 10) break;
         }
     }
 
@@ -93,9 +90,7 @@ public class HighscoreTable : MonoBehaviour
         string json = JsonUtility.ToJson(highscores);
         PlayerPrefs.SetString("highscoreTable", json);
         PlayerPrefs.Save();
-
     }
-
 
     private class Highscores
     {

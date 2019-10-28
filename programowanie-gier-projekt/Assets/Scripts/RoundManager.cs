@@ -1,30 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;   
+using UnityEngine.UI;
 
-public class RoundManager : MonoBehaviour
+namespace Assets.Scripts
 {
-    private Text _theText;
-    public static int round = 1;
-
-    public static void NextRound()
+    public class RoundManager : MonoBehaviour
     {
-        round++;
-    }
+        private Text _theText;
+        public static int round = 1;
 
-    public void ResetRound()
-    {
-        round = 1;
-    }
+        public static void NextRound()
+        {
+            round++;
+        }
 
-    void Start()
-    {
-        _theText = GetComponent<Text>();
-    }
+        public void ResetRound()
+        {
+            round = 1;
+        }
 
-    void Update()
-    {
-        _theText.text = "" + round;
+        void Start()
+        {
+            _theText = GetComponent<Text>();
+        }
+
+        void Update()
+        {
+            _theText.text = "" + round;
+        }
     }
 }

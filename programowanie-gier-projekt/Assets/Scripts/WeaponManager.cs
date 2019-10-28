@@ -3,7 +3,6 @@ using UnityEditor;
 
 public static class WeaponManager
 {
-    // Start is called before the first frame update
     public static int numberOfBullets = 6;
     public static bool isReloading = false;
 

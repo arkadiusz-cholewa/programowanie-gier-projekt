@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BackToMainMenuButtonHandler : MonoBehaviour
+namespace Assets.Scripts
 {
-    public Button yourButton;
-
-    void Start()
+    public class BackToMainMenuButtonHandler : MonoBehaviour
     {
-        Button btn = yourButton.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
-    }
+        public Button yourButton;
 
-    void TaskOnClick()
-    {
-       SceneManager.LoadScene("MainMenuScene");
+        void Start()
+        {
+            Button btn = yourButton.GetComponent<Button>();
+            btn.onClick.AddListener(TaskOnClick);
+        }
+
+        void TaskOnClick()
+        {
+            SceneManager.LoadScene("MainMenuScene");
+        }
     }
 }

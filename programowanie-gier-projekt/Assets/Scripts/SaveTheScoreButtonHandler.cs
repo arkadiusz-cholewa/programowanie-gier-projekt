@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SaveTheScoreButtonHandler : MonoBehaviour
+namespace Assets.Scripts
 {
-     public Button yourButton;
-
-    void Start()
+    public class SaveTheScoreButtonHandler : MonoBehaviour
     {
-        Button btn = yourButton.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
-    }
+        public Button yourButton;
 
-    void TaskOnClick()
-    {
-       SceneManager.LoadScene("SaveTheScoreScene");
+        void Start()
+        {
+            Button btn = yourButton.GetComponent<Button>();
+            btn.onClick.AddListener(TaskOnClick);
+        }
+
+        void TaskOnClick()
+        {
+            SceneManager.LoadScene("SaveTheScoreScene");
+        }
     }
 }
