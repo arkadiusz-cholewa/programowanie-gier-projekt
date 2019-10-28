@@ -30,6 +30,7 @@ namespace Assets.Scripts
             {
                 isSpawned = false;
                 SceneManager.LoadScene("MagicWorldScene");
+                TimeManager.Foo();
                 Destroy(gameObject);
             }
         }

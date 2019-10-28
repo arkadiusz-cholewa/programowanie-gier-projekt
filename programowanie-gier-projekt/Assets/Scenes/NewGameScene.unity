@@ -1497,8 +1497,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPrefab: {fileID: 5097471426732270899, guid: 2edbbd6d7cc04dc49b9e3f72a1724c04,
     type: 3}
-  _offsetMin: 10
-  _offsetMax: 20
+  _offsetMin: 25
+  _offsetMax: 35
 --- !u!1001 &2017317517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1846,6 +1846,21 @@ PrefabInstance:
     - target: {fileID: 5097471426732270910, guid: 2edbbd6d7cc04dc49b9e3f72a1724c04,
         type: 3}
       propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097471426732270910, guid: 2edbbd6d7cc04dc49b9e3f72a1724c04,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097471426732270910, guid: 2edbbd6d7cc04dc49b9e3f72a1724c04,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097471426732270910, guid: 2edbbd6d7cc04dc49b9e3f72a1724c04,
+        type: 3}
+      propertyPath: m_Simulated
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5097471426732270896, guid: 2edbbd6d7cc04dc49b9e3f72a1724c04,
