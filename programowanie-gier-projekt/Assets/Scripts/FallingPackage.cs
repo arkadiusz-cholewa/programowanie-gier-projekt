@@ -8,8 +8,8 @@ namespace Assets.Scripts
 
         private float _scale = 0f;
         private float _gravityScale = 0f;
-        private readonly float _offsetMin = 3f;
-        private readonly float _offsetMax = 3f;
+        public readonly float _offsetMin = 3f;
+        public readonly float _offsetMax = 3f;
         private readonly float _minVelocity = 4f;
         private readonly float _maxVelocity = 8f;
 
