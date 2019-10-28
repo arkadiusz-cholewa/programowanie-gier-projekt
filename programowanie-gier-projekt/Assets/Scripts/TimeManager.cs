@@ -40,7 +40,7 @@ namespace Assets.Scripts
             StartingTime += MoreTimeInSeconds;
         }
 
-        public static void Foo()
+        public static void ResetTimerForMagicWorld()
         {
             if (StartingTime > 15)
             {

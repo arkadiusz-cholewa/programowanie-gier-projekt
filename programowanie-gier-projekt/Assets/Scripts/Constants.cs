@@ -8,5 +8,6 @@
         public const float MinY = -5;
 
         public const int LeftMouseButton = 0;
+        public const int RightMouseButton = 1;
     }
 }

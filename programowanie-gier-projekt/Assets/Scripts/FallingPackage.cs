@@ -10,8 +10,6 @@ namespace Assets.Scripts
         private float _gravityScale = 0f;
         public readonly float _offsetMin = 3f;
         public readonly float _offsetMax = 3f;
-        private readonly float _minVelocity = 4f;
-        private readonly float _maxVelocity = 8f;
         private float mult = RoundManager.round / 10f;
         void Start()
         {

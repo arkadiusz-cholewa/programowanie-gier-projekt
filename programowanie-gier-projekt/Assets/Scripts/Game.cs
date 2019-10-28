@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
     public class Game : MonoBehaviour
     {
         private const float MinY = Constants.MinY;
-   
+
         public GameObject targetPrefab;
         public float respawnTime = 1f;
 
         // Start is called before the first frame update
         private void Start()
         {
-           // StartCoroutine(targetWave());
+            // StartCoroutine(targetWave());
         }
 
         private void Update()
@@ -21,6 +22,11 @@ namespace Assets.Scripts
             if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 WeaponManager.Shot();
+            }
+
+            if (Input.GetKeyDown("escape"))
+            {
+                SceneManager.LoadScene("MainMenuScene");
             }
         }
 
@@ -40,6 +46,6 @@ namespace Assets.Scripts
             }
         }
 
-       
+
     }
 }
