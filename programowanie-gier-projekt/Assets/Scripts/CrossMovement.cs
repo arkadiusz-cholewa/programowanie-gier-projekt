@@ -40,13 +40,13 @@ namespace Assets.Scripts
             }
 
 
-           if (!WeaponManager.isReloading &&  !_isDead && Input.GetMouseButtonDown(Constants.LeftMouseButton))
+            if (!WeaponManager.isReloading && !_isDead && Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 var dist = Mathf.Abs(transform.position.z - Camera.main.transform.position.z);
-                var v3Pos =new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
+                var v3Pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
                 v3Pos = Camera.main.ScreenToWorldPoint(v3Pos);
                 var distanceBetween = Vector3.Distance(v3Pos, transform.position);
-                if (distanceBetween < (int) WeaponManager.weaponCategory * 1f + 1)
+                if (distanceBetween < (int)WeaponManager.weaponCategory * 1f + 1)
                 {
                     Hit();
                 }
@@ -87,6 +87,7 @@ namespace Assets.Scripts
         private void ReScale()
         {
             _scale = Random.Range(1f, 3f);
+            _scale -= RoundManager.round / 10f; //zmniejszanie co runda 
             transform.localScale = new Vector3((-sign) * _scale, _scale, 1);
         }
     }

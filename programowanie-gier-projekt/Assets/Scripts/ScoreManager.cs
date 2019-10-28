@@ -26,7 +26,7 @@ namespace Assets.Scripts
 
         public static void AddPoints(int pointsToAdd)
         {
-            Score += pointsToAdd;
+            Score += (pointsToAdd + RoundManager.round);
         }
 
         public static void Reset()
