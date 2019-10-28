@@ -5,18 +5,23 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class NewGameButtonHandler : MonoBehaviour
+namespace Assets.Scripts
 {
-    public Button yourButton;
-
-    void Start()
+    public class NewGameButtonHandler : MonoBehaviour
     {
-        Button btn = yourButton.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
+        public Button yourButton;
+
+        void Start()
+        {
+            Button btn = yourButton.GetComponent<Button>();
+            btn.onClick.AddListener(TaskOnClick);
+        }
+
+        void TaskOnClick()
+        {
+            ScoreManager.Score = 0;
+            SceneManager.LoadScene("NewGameScene");
+        }
     }
 
-    void TaskOnClick()
-    {
-       SceneManager.LoadScene("NewGameScene");
-    }
 }

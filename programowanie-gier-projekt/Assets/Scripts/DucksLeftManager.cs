@@ -2,30 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class DucksLeftManager : MonoBehaviour
+namespace Assets.Scripts
 {
-    private Text _theText;
-    public static int ducksLeft = 20;
-
-    void Start()
+    public class DucksLeftManager : MonoBehaviour
     {
-        _theText = GetComponent<Text>();
-    }
+        private Text _theText;
+        public static int ducksLeft = 20;
 
-    void Update()
-    {
-        _theText.text = "" + ducksLeft;
-
-        if (ducksLeft == 0)
+        void Start()
         {
-            RoundManager.NextRound();
-            ducksLeft = 20;
+            _theText = GetComponent<Text>();
         }
-    }
 
-    public static void DecreaseDucksLeftCounter()
-    {
-        ducksLeft--;
+        void Update()
+        {
+            _theText.text = "" + ducksLeft;
+
+            if (ducksLeft == 0)
+            {
+                RoundManager.NextRound();
+               // TimeManager.RestartTimer();
+                ducksLeft = 20;
+            }
+        }
+
+        public static void DecreaseDucksLeftCounter()
+        {
+            ducksLeft--;
+        }
     }
 }

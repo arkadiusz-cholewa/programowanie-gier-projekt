@@ -12,7 +12,6 @@ namespace Assets.Scripts
         void Start()
         {
             _theText = GetComponent<Text>();
-            Score = 0;
         }
 
         void Update()

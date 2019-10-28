@@ -7,6 +7,7 @@ namespace Assets.Scripts
     public class TimeManager : MonoBehaviour
     {
         public float StartingTime;
+        public string ShowSceneNameAfterTimeEnd = "GameOverScene";
  
         private Text _theText;
 
@@ -23,8 +24,12 @@ namespace Assets.Scripts
 
             if (StartingTime < 0)
             {
-                SceneManager.LoadScene("GameOverScene");
+                SceneManager.LoadScene(ShowSceneNameAfterTimeEnd);
             }
+        }
+
+        public static void  RestartTimer() {
+          //  StartingTime = 60;
         }
     }
 }

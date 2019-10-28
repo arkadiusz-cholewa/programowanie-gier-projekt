@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ScoreboardScene.unity
     guid: 47e66c347a229e44689f8a08df440906
+  - enabled: 1
+    path: Assets/Scenes/MagicWorldScene.unity
+    guid: 540144035742fdc4cb83356a67e55eaa
   m_configObjects: {}
