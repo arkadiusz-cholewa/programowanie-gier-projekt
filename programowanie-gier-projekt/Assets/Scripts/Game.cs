@@ -15,6 +15,7 @@ namespace Assets.Scripts
         private void Start()
         {
             // StartCoroutine(targetWave());
+            
         }
 
         private void Update()

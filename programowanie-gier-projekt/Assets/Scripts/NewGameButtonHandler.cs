@@ -19,6 +19,7 @@ namespace Assets.Scripts
         void TaskOnClick()
         {
             ScoreManager.Score = 0;
+            TimeManager.StartingTime = 45;
             SquirellHandleClick.isSpawned = true;
             SceneManager.LoadScene("NewGameScene");
         }
