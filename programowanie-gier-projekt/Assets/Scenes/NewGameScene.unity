@@ -313,6 +313,102 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &120642669
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120642667}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &220286831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2249,6 +2345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6186891007173860814, guid: f3c641f7ee8ebad4d8a12b3c043b7a5d,
         type: 3}
+      propertyPath: shots.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186891007173860814, guid: f3c641f7ee8ebad4d8a12b3c043b7a5d,
+        type: 3}
       propertyPath: backGrounds.Array.data[0]
       value: 
       objectReference: {fileID: 3915923456635978692, guid: 1e1ac5134a3e1a84b8bba5d20cc4b11f,
@@ -2265,6 +2366,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 28fe370498e5f5140b119238fe516e77,
         type: 3}
+    - target: {fileID: 6186891007173860814, guid: f3c641f7ee8ebad4d8a12b3c043b7a5d,
+        type: 3}
+      propertyPath: impact
+      value: 
+      objectReference: {fileID: 8300000, guid: 61735369df4938e4199fbb0b2c39c603, type: 3}
+    - target: {fileID: 6186891007173860814, guid: f3c641f7ee8ebad4d8a12b3c043b7a5d,
+        type: 3}
+      propertyPath: shots.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e6cb3d2f60594fb4084dbb9fe93dca08, type: 3}
+    - target: {fileID: 6186891007173860814, guid: f3c641f7ee8ebad4d8a12b3c043b7a5d,
+        type: 3}
+      propertyPath: shots.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 61735369df4938e4199fbb0b2c39c603, type: 3}
+    - target: {fileID: 6186891007173860814, guid: f3c641f7ee8ebad4d8a12b3c043b7a5d,
+        type: 3}
+      propertyPath: shots.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 61735369df4938e4199fbb0b2c39c603, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3c641f7ee8ebad4d8a12b3c043b7a5d, type: 3}
 --- !u!1001 &6488418087863457019
