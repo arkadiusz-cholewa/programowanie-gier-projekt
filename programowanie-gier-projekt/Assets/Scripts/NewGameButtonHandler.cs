@@ -20,6 +20,7 @@ namespace Assets.Scripts
         {
             ScoreManager.Score = 0;
             TimeManager.StartingTime = 45;
+            RoundManager.round = 0;
             SquirellHandleClick.isSpawned = true;
             SceneManager.LoadScene("NewGameScene");
         }

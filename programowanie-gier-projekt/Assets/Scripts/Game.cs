@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
+   
     public class Game : MonoBehaviour
     {
         private const float MinY = Constants.MinY;
@@ -11,13 +12,15 @@ namespace Assets.Scripts
         public GameObject targetPrefab;
         public float respawnTime = 1f;
 
-
+         AudioSource audioSource;
+         public AudioClip[] shots;
         SpriteRenderer sr;
         GameObject back1;
         GameObject back2;
         GameObject back3;
         private void Start()
         {
+            audioSource = GetComponent<AudioSource>();
             back1 = GameObject.Find("back1");
             back2 = GameObject.Find("back2");
             back3 = GameObject.Find("back3");
@@ -54,6 +57,10 @@ namespace Assets.Scripts
             if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 WeaponManager.Shot();
+                if (!WeaponManager.isReloading)
+                {
+                    audioSource.PlayOneShot(shots[(int)WeaponManager.weaponCategory], 0.7F);
+                }
             }
 
             if (Input.GetKeyDown("escape"))
