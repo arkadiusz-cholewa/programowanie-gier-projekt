@@ -57,7 +57,7 @@ public static class WeaponManager
         switch (weaponCategory)
         {
             case WeaponCategory.Pistol: return 6;
-            case WeaponCategory.Shotgun: return 2;
+            case WeaponCategory.Shotgun: return 3;
             case WeaponCategory.Rifle: return 18;
             default: return 6;
         }

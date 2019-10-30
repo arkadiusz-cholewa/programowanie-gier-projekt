@@ -6,17 +6,20 @@ namespace Assets.Scripts
 {
     public class BulletManager : MonoBehaviour
     {
+      
         public Texture pistolBullet;
         public Texture shotgunBullet;
         public Texture rifleBullet;
         private static int _amountOfBullets = 6;
         void Start()
         {
+           
             _amountOfBullets = WeaponManager.numberOfBullets;
         }
 
         private IEnumerator ReloadDelay()
         {
+          
             WeaponManager.Reloading();
             yield return new WaitForSeconds(2f);
 
