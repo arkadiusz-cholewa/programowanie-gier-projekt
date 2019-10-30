@@ -69,7 +69,7 @@ namespace Assets.Scripts
         {
             if (isClickable)
             {
-                audioSource.PlayOneShot(hitSound, 0.7F);
+                audioSource.PlayOneShot(hitSound, 0.9F);
                 animator = GetComponent<Animator>();
                 animator.enabled = false;
                 var sr = gameObject.GetComponent<SpriteRenderer>();

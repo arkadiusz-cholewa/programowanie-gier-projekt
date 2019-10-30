@@ -62,7 +62,7 @@ namespace Assets.Scripts
 
         private void Hit()
         {
-            audioSource.PlayOneShot(hitSound, 0.7F);
+            audioSource.PlayOneShot(hitSound, 0.9F);
             ScoreManager.AddPoints(Mathf.FloorToInt(30 - _scale * 10));
         }
 
