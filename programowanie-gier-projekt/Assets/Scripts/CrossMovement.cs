@@ -8,7 +8,7 @@ namespace Assets.Scripts
         public Sprite duck_kill;
         Animator animator;
         public int value = 30;
-
+        public bool isClickable = true;
         private bool _isDead = false;
         private float _scale = 0f;
         private readonly float _minVelocity = 3f;
@@ -65,14 +65,17 @@ namespace Assets.Scripts
 
         private void Hit()
         {
-            animator = GetComponent<Animator>();
-            animator.enabled = false;
-            var sr = gameObject.GetComponent<SpriteRenderer>();
-            sr.sprite = duck_kill;
-            _isDead = true;
-            GetComponent<Rigidbody2D>().gravityScale = 2f;
-            ScoreManager.AddPoints(Mathf.FloorToInt(value - _scale * 10));
-            DucksLeftManager.DecreaseDucksLeftCounter();
+            if (isClickable)
+            {
+                animator = GetComponent<Animator>();
+                animator.enabled = false;
+                var sr = gameObject.GetComponent<SpriteRenderer>();
+                sr.sprite = duck_kill;
+                _isDead = true;
+                GetComponent<Rigidbody2D>().gravityScale = 2f;
+                ScoreManager.AddPoints(Mathf.FloorToInt(value - _scale * 10));
+                DucksLeftManager.DecreaseDucksLeftCounter();
+            }
         }
 
         private void Setup()
