@@ -16,9 +16,12 @@ namespace Assets.Scripts
         private float sign = 1;
 
         private float mult = RoundManager.round / 10f;
+        public AudioClip hitSound;
 
+        AudioSource audioSource;
         void Start()
         {
+            audioSource = GetComponent<AudioSource>();
             GetComponent<Rigidbody2D>().gravityScale = 0f;
             GetComponent<Collider2D>().enabled = true;
             sign = (Random.value > 0.5f) ? -1 : 1;
@@ -67,6 +70,7 @@ namespace Assets.Scripts
         {
             if (isClickable)
             {
+                audioSource.PlayOneShot(hitSound, 0.7F);
                 animator = GetComponent<Animator>();
                 animator.enabled = false;
                 var sr = gameObject.GetComponent<SpriteRenderer>();

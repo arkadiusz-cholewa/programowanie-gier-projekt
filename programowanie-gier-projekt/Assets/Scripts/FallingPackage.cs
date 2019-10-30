@@ -10,8 +10,12 @@ namespace Assets.Scripts
         public readonly float _offsetMin = 3f;
         public readonly float _offsetMax = 3f;
         private float mult = RoundManager.round / 10f;
+        public AudioClip hitSound;
+
+        AudioSource audioSource;
         void Start()
         {
+            audioSource = GetComponent<AudioSource>();
             GetComponent<Collider2D>().enabled = true;
             _gravityScale = Random.Range(0.1f, 0.15f);
             Setup();
@@ -56,6 +60,7 @@ namespace Assets.Scripts
 
         private void Hit()
         {
+            audioSource.PlayOneShot(hitSound, 0.7F);
             WeaponManager.RerollWeapon();
         }
 

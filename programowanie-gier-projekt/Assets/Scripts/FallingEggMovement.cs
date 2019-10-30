@@ -15,9 +15,12 @@ namespace Assets.Scripts
         private float _gravityScale = 0f;
         private readonly float _offsetMin = 1f;
         private readonly float _offsetMax = 3f;
+        public AudioClip hitSound;
 
+        AudioSource audioSource;
         void Start()
         {
+            audioSource = GetComponent<AudioSource>();
             GetComponent<Collider2D>().enabled = true;
             _gravityScale = Random.Range(0.1f, 0.3f);
 
@@ -64,6 +67,7 @@ namespace Assets.Scripts
 
         private void Hit()
         {
+            audioSource.PlayOneShot(hitSound, 0.7F);
             var sr = gameObject.GetComponent<SpriteRenderer>();
             sr.sprite = duck_kill;
             _isDead = true;
