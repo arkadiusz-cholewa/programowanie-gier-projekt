@@ -1986,16 +1986,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3252431825051576796, guid: a0f97be97cf68bd47b4b1ea8e024caf3,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7908981040637794430, guid: a0f97be97cf68bd47b4b1ea8e024caf3,
         type: 3}
       propertyPath: hitSound
       value: 
       objectReference: {fileID: 8300000, guid: d2291b374d178484391faeda959ddccc, type: 3}
+    - target: {fileID: 3252431825051576796, guid: a0f97be97cf68bd47b4b1ea8e024caf3,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0f97be97cf68bd47b4b1ea8e024caf3, type: 3}
 --- !u!1 &749769094 stripped
@@ -4184,6 +4184,7 @@ MonoBehaviour:
   targetPrefab: {fileID: 5097471426732270899, guid: 2edbbd6d7cc04dc49b9e3f72a1724c04,
     type: 3}
   hitSound: {fileID: 0}
+  playHitSound: 0
 --- !u!82 &1976843677
 AudioSource:
   m_ObjectHideFlags: 0

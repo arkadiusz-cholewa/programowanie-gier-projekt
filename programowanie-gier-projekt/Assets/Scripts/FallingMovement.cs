@@ -13,7 +13,7 @@ namespace Assets.Scripts
         private readonly float _offsetMax = 3f;
         private float mult = RoundManager.round / 10f;
         public AudioClip hitSound;
-
+        public bool playHitSound = true;
         AudioSource audioSource;
         void Start()
         {
@@ -62,7 +62,12 @@ namespace Assets.Scripts
 
         private void Hit()
         {
-            audioSource.PlayOneShot(hitSound, 0.9F);
+            if (playHitSound)
+            {
+                audioSource.PlayOneShot(hitSound, 0.9F);
+            }
+
+            
             ScoreManager.AddPoints(Mathf.FloorToInt(30 - _scale * 10));
         }
 

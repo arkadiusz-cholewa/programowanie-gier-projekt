@@ -15,7 +15,7 @@ namespace Assets.Scripts
                 Destroy(gameObject);
             }
         }
-
+        
         private void OnMouseOver()
         {
 
