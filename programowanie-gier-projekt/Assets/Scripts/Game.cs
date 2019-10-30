@@ -14,6 +14,8 @@ namespace Assets.Scripts
 
         AudioSource audioSource;
         public AudioClip[] shots;
+        private bool hasPlayed = false;
+        public AudioClip reload;
         SpriteRenderer sr;
         GameObject back1;
         GameObject back2;
@@ -32,7 +34,7 @@ namespace Assets.Scripts
                 back3.SetActive(false);
             }
 
-           
+
         }
 
         private void Update()
@@ -60,18 +62,30 @@ namespace Assets.Scripts
                     back3.SetActive(true);
                 }
             }
-        
+
 
             if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 WeaponManager.Shot();
                 if (!WeaponManager.isReloading)
                 {
+                    hasPlayed = false;
                     audioSource.PlayOneShot(shots[(int)WeaponManager.weaponCategory], 0.7F);
                 }
             }
 
-         
+
+            if (WeaponManager.isReloading)
+            {
+                if (!hasPlayed)
+                {
+                    audioSource.PlayOneShot(reload);
+                    hasPlayed = true;
+                }
+
+            }
+
+
             if (Input.GetKeyDown("escape"))
             {
                 SceneManager.LoadScene("MainMenuScene");

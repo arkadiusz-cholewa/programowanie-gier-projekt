@@ -306,7 +306,12 @@ PrefabInstance:
         type: 3}
       propertyPath: shots.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: 8ffbdc1e244368343a067c9cb2715ec2, type: 3}
+      objectReference: {fileID: 8300000, guid: 8a581084bca6c874d97570ff7e4fec1e, type: 3}
+    - target: {fileID: 6186891007173860814, guid: f3c641f7ee8ebad4d8a12b3c043b7a5d,
+        type: 3}
+      propertyPath: reload
+      value: 
+      objectReference: {fileID: 8300000, guid: f6d606e0c0a6e974784a3a60b36f31c8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3c641f7ee8ebad4d8a12b3c043b7a5d, type: 3}
 --- !u!1 &23162657 stripped
