@@ -19,8 +19,9 @@ namespace Assets.Scripts
         void TaskOnClick()
         {
             ScoreManager.Score = 0;
-            TimeManager.StartingTime = 45;
+            TimeManager.StartingTime = 60;
             RoundManager.round = 1;
+            WeaponManager.numberOfBullets = 6;
             DucksLeftManager.ducksLeft = 20;
             SquirellHandleClick.isSpawned = true;
             SceneManager.LoadScene("NewGameScene");

@@ -6,9 +6,9 @@ namespace Assets.Scripts
 {
     public class TimeManager : MonoBehaviour
     {
-        public static float StartingTime = 45;
+        public static float StartingTime = 60;
         public string ShowSceneNameAfterTimeEnd = "GameOverScene";
-        public static float MoreTimeInSeconds = 15f;
+        public static float MoreTimeInSeconds = 10f;
 
 
         private Text _theText;
@@ -29,7 +29,7 @@ namespace Assets.Scripts
                 SceneManager.LoadScene(ShowSceneNameAfterTimeEnd);
                 if (ShowSceneNameAfterTimeEnd != "GameOverScene")
                 {
-                    StartingTime = 45f;
+                    StartingTime = 60f;
                 }
             }
         }
@@ -43,7 +43,7 @@ namespace Assets.Scripts
         {
             if (StartingTime > 15)
             {
-                StartingTime = 15f;
+                StartingTime = 10f;
             }
 
         }
