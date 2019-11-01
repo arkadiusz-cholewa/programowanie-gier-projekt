@@ -2,13 +2,10 @@
 
 public static class WeaponManager
 {
-    public static int numberOfBullets = GetAmountOfBullets(weaponCategory);
     public static bool isReloading = false;
-
     public enum WeaponCategory { Rifle, Pistol, Shotgun };
-
     public static WeaponCategory weaponCategory = WeaponCategory.Pistol;
-
+    public static int numberOfBullets = GetAmountOfBullets(weaponCategory);
     public static void Shot()
     {
         numberOfBullets--;
@@ -50,7 +47,6 @@ public static class WeaponManager
         numberOfBullets = GetAmountOfBullets(weaponCategory);
         isReloading = false;
         UsePistol();
-
     }
 
     private static int GetAmountOfBullets(WeaponCategory weaponCategory)

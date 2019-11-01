@@ -709,6 +709,11 @@ PrefabInstance:
       propertyPath: isClickable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2591497787228601649, guid: 2ba8cb861eff33141988732fbd273845,
+        type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b9ecf079bd821de43924e25bda7a5006, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ba8cb861eff33141988732fbd273845, type: 3}
 --- !u!1 &502574575 stripped
@@ -1089,6 +1094,11 @@ PrefabInstance:
       propertyPath: isClickable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7843130664068104172, guid: ff31dcab65cd1d14e8e05ec4b081603c,
+        type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b9ecf079bd821de43924e25bda7a5006, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff31dcab65cd1d14e8e05ec4b081603c, type: 3}
 --- !u!1 &1078917560 stripped
@@ -1265,6 +1275,11 @@ PrefabInstance:
       propertyPath: isClickable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6713858844755049314, guid: a83145c9de3abd04dac8e64448ec9180,
+        type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b9ecf079bd821de43924e25bda7a5006, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a83145c9de3abd04dac8e64448ec9180, type: 3}
 --- !u!1 &1653521967 stripped
