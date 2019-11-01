@@ -49,6 +49,8 @@ public static class WeaponManager
     {
         numberOfBullets = GetAmountOfBullets(weaponCategory);
         isReloading = false;
+        UsePistol();
+
     }
 
     private static int GetAmountOfBullets(WeaponCategory weaponCategory)
