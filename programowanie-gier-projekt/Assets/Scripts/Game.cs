@@ -38,21 +38,21 @@ namespace Assets.Scripts
         {
             if (back1 != null && back2 != null && back3 != null)
             {
-                if (RoundManager.round - 1 % 3 == 0)
+                if ((RoundManager.round - 1) % 3 == 0)
                 {
                     back1.SetActive(true);
                     back2.SetActive(false);
                     back3.SetActive(false);
                 }
 
-                if (RoundManager.round - 1 % 3 == 1)
+                if ((RoundManager.round - 1) % 3 == 1)
                 {
                     back1.SetActive(false);
                     back2.SetActive(true);
                     back3.SetActive(false);
                 }
 
-                if (RoundManager.round - 1 % 3 == 2)
+                if ((RoundManager.round - 1) % 3 == 2)
                 {
                     back1.SetActive(false);
                     back2.SetActive(false);
