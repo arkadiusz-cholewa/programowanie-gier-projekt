@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
@@ -18,7 +16,7 @@ namespace Assets.Scripts
 
         void TaskOnClick()
         {
-            SceneManager.LoadScene("SaveTheScoreScene");
+            SceneManager.LoadScene(Constants.SaveTheScoreScene);
         }
     }
 }

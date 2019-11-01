@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
-
     public class Game : MonoBehaviour
     {
         private const float MinY = Constants.MinY;
@@ -33,8 +32,6 @@ namespace Assets.Scripts
                 back2.SetActive(false);
                 back3.SetActive(false);
             }
-
-
         }
 
         private void Update()
@@ -63,7 +60,6 @@ namespace Assets.Scripts
                 }
             }
 
-
             if (Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 WeaponManager.Shot();
@@ -85,10 +81,9 @@ namespace Assets.Scripts
 
             }
 
-
-            if (Input.GetKeyDown("escape"))
+            if (Input.GetKeyDown(Constants.escapeKeyCode))
             {
-                SceneManager.LoadScene("MainMenuScene");
+                SceneManager.LoadScene(Constants.MainMenuScene);
             }
         }
 

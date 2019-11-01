@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Scripts
@@ -15,7 +13,7 @@ namespace Assets.Scripts
             round++;
         }
 
-        public void ResetRound()
+        public static void ResetRound()
         {
             round = 1;
         }

@@ -1,9 +1,8 @@
 ﻿using System;
-using UnityEditor;
 
 public static class WeaponManager
 {
-    public static int numberOfBullets = 6;
+    public static int numberOfBullets = GetAmountOfBullets(weaponCategory);
     public static bool isReloading = false;
 
     public enum WeaponCategory { Rifle, Pistol, Shotgun };
@@ -56,10 +55,10 @@ public static class WeaponManager
     {
         switch (weaponCategory)
         {
-            case WeaponCategory.Pistol: return 6;
-            case WeaponCategory.Shotgun: return 3;
-            case WeaponCategory.Rifle: return 18;
-            default: return 6;
+            case WeaponCategory.Pistol: return 8;
+            case WeaponCategory.Shotgun: return 4;
+            case WeaponCategory.Rifle: return 20;
+            default: return 8;
         }
     }
 }

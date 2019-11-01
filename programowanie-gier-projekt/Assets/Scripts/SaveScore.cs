@@ -17,7 +17,7 @@ namespace Assets.Scripts
         void TaskOnClick()
         {
             HighscoreTable.AddHighscoreEntry(ScoreManager.Score, iField.text);
-            SceneManager.LoadScene("ScoreboardScene");
+            SceneManager.LoadScene(Constants.ScoreboardScene);
         }
     }
 }

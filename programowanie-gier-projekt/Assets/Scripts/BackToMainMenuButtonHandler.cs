@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
@@ -16,9 +14,6 @@ namespace Assets.Scripts
             btn.onClick.AddListener(TaskOnClick);
         }
 
-        void TaskOnClick()
-        {
-            SceneManager.LoadScene("MainMenuScene");
-        }
+        void TaskOnClick() => SceneManager.LoadScene(Constants.MainMenuScene);
     }
 }

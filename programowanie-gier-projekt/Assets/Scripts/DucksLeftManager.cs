@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 namespace Assets.Scripts
 {
@@ -21,7 +19,7 @@ namespace Assets.Scripts
             if (ducksLeft < 0)
             {
                 RoundManager.NextRound();
-                TimeManager.RestartTimer();
+                TimeManager.AddMoreTime();
                 ducksLeft = 20;
             }
         }

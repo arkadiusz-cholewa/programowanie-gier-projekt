@@ -9,7 +9,7 @@ namespace Assets.Scripts
         void Start()
         {
             _theText = GetComponent<Text>();
-          
+
         }
         void Update()
         {

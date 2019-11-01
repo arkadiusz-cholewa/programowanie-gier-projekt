@@ -1,7 +1,5 @@
-﻿using System.Collections;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -15,14 +13,13 @@ namespace Assets.Scripts
                 Destroy(gameObject);
             }
         }
-        
+
         private void OnMouseOver()
         {
-
             if (!isSpawned && Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 isSpawned = false;
-                SceneManager.LoadScene("MagicWorldScene");
+                SceneManager.LoadScene(Constants.MagicWorldScene);
                 TimeManager.ResetTimerForMagicWorld();
                 Destroy(gameObject);
             }
