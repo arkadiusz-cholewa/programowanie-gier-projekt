@@ -1662,6 +1662,11 @@ PrefabInstance:
       propertyPath: isClickable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 520785216946033787, guid: 3bed9f676ed49794794f7d46e9ff80bd,
+        type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b9ecf079bd821de43924e25bda7a5006, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bed9f676ed49794794f7d46e9ff80bd, type: 3}
 --- !u!1 &2079120666 stripped
