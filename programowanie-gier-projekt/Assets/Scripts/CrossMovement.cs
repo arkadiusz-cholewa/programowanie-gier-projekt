@@ -39,7 +39,7 @@ namespace Assets.Scripts
             if (_isDead && transform.position.y < Constants.MinY)
             {
                 var obj = (GameObject)Instantiate(targetPrefab, new Vector2(Helpers.GetRandomXPosition(), Constants.MinY - 3), Quaternion.identity);
-                obj.GetComponent<Rigidbody2D>().velocity = new Vector2(sign * Random.Range(_minVelocity+mult, _maxVelocity+mult), Random.Range(_minVelocity+mult, _maxVelocity+mult));
+                obj.GetComponent<Rigidbody2D>().velocity = new Vector2(sign * Random.Range(_minVelocity + mult, _maxVelocity + mult), Random.Range(_minVelocity + mult, _maxVelocity + mult));
                 ReScale();
                 Destroy(gameObject);
             }
@@ -51,7 +51,7 @@ namespace Assets.Scripts
                 var v3Pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
                 v3Pos = Camera.main.ScreenToWorldPoint(v3Pos);
                 var distanceBetween = Vector3.Distance(v3Pos, transform.position);
-                if (distanceBetween <  0.25f + (int)WeaponManager.weaponCategory * 0.5f)
+                if (distanceBetween < 0.25f + (int)WeaponManager.weaponCategory * 0.5f)
                 {
                     Hit();
                 }
@@ -96,7 +96,7 @@ namespace Assets.Scripts
         private void ReScale()
         {
             _scale = Random.Range(1f, 3f);
-            _scale -= RoundManager.round / 30f; 
+            _scale -= RoundManager.round / 30f;
             transform.localScale = new Vector3((-sign) * _scale, _scale, 1);
         }
     }

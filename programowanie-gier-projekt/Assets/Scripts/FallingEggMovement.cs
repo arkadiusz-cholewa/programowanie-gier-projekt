@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -9,7 +7,7 @@ namespace Assets.Scripts
         public GameObject targetPrefab;
         public Sprite duck_kill;
         public Sprite egg;
-      
+
         private bool _isDead = false;
         private float _scale = 0f;
         private float _gravityScale = 0f;
@@ -43,13 +41,13 @@ namespace Assets.Scripts
                 Destroy(gameObject);
             }
 
-            if (!WeaponManager.isReloading &&  !_isDead && Input.GetMouseButtonDown(Constants.LeftMouseButton))
+            if (!WeaponManager.isReloading && !_isDead && Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
                 var dist = Mathf.Abs(transform.position.z - Camera.main.transform.position.z);
                 var v3Pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
                 v3Pos = Camera.main.ScreenToWorldPoint(v3Pos);
                 var distanceBetween = Vector3.Distance(v3Pos, transform.position);
-                if (distanceBetween <  0.25f + (int)WeaponManager.weaponCategory * 0.5f)
+                if (distanceBetween < 0.25f + (int)WeaponManager.weaponCategory * 0.5f)
                 {
                     Hit();
                 }
@@ -58,7 +56,7 @@ namespace Assets.Scripts
 
         private void OnMouseOver()
         {
-            if (!WeaponManager.isReloading &&  !_isDead  && Input.GetMouseButtonDown(Constants.LeftMouseButton))
+            if (!WeaponManager.isReloading && !_isDead && Input.GetMouseButtonDown(Constants.LeftMouseButton))
             {
 
                 Hit();
