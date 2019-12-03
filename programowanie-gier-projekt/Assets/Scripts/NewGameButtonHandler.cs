@@ -21,7 +21,7 @@ namespace Assets.Scripts
             RoundManager.ResetRound();
             WeaponManager.Ready();
             DucksLeftManager.ducksLeft = 20;
-            SquirellHandleClick.isSpawned = true;
+            SquirellHandleClick.isSpawned = false;
             SceneManager.LoadScene(Constants.NewGameScene);
         }
     }
