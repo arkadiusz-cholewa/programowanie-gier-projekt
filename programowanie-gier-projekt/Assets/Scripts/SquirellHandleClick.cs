@@ -16,7 +16,7 @@ namespace Assets.Scripts
 
         private void OnMouseOver()
         {
-            if (!isSpawned && Input.GetMouseButtonDown(Constants.LeftMouseButton))
+            if (!isSpawned && Input.GetMouseButtonDown(Constants.LeftMouseButton) && !WeaponManager.isReloading)
             {
                 isSpawned = false;
                 SceneManager.LoadScene(Constants.MagicWorldScene);
