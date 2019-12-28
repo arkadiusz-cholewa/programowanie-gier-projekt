@@ -14,6 +14,7 @@ namespace Assets.Scripts
         AudioSource audioSource;
         public AudioClip[] shots;
         private bool hasPlayed = false;
+        private bool _isPaused = false;
         public AudioClip reload;
         SpriteRenderer sr;
         GameObject back1;
@@ -84,6 +85,20 @@ namespace Assets.Scripts
             if (Input.GetKeyDown(Constants.escapeKeyCode))
             {
                 SceneManager.LoadScene(Constants.MainMenuScene);
+            }
+
+            if (Input.GetKeyDown(Constants.pauseKeyCode))
+            {
+                if (!_isPaused)
+                {
+                    Time.timeScale = 0;
+                    _isPaused = true;
+                }
+                else
+                {
+                    Time.timeScale = 1;
+                    _isPaused = false;
+                }
             }
         }
 

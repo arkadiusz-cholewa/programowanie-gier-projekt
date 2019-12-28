@@ -10,6 +10,7 @@
         public const int LeftMouseButton = 0;
         public const int RightMouseButton = 1;
         public static string escapeKeyCode = "escape";
+        public static string pauseKeyCode = "p";
 
         public const string MainMenuScene = "MainMenuScene";
         public const string MagicWorldScene = "MagicWorldScene";

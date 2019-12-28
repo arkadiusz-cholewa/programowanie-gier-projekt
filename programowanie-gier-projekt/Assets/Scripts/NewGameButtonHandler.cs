@@ -20,7 +20,9 @@ namespace Assets.Scripts
             TimeManager.ResetTimer();
             RoundManager.ResetRound();
             WeaponManager.Ready();
+            WeaponManager.numberOfBullets = 8;
             DucksLeftManager.ducksLeft = 20;
+            Time.timeScale = 1;
             SquirellHandleClick.isSpawned = false;
             SceneManager.LoadScene(Constants.NewGameScene);
         }

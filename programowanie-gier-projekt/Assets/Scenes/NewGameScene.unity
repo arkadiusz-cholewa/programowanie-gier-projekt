@@ -4842,6 +4842,31 @@ PrefabInstance:
       propertyPath: m_FontData.m_Alignment
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5171866159086799391, guid: 1619b5003297c4a49a5083d028bbfbba,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 73.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171866159086799391, guid: 1619b5003297c4a49a5083d028bbfbba,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 565.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171866159086799391, guid: 1619b5003297c4a49a5083d028bbfbba,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406406342549537792, guid: 1619b5003297c4a49a5083d028bbfbba,
+        type: 3}
+      propertyPath: m_Text
+      value: ESC - quit game | P - pause/unpause game
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406406342549537792, guid: 1619b5003297c4a49a5083d028bbfbba,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1619b5003297c4a49a5083d028bbfbba, type: 3}
 --- !u!1001 &492085435753727249
